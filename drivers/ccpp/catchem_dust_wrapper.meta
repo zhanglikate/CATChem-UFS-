@@ -141,7 +141,7 @@
   intent = in
 [hf2d]
   standard_name = instantaneous_surface_upward_sensible_heat_flux
-  long_name = surface upward sensible heat flux valid for current call
+  long_name = surface upward sensible heat flux
   units = W m-2
   dimensions = (horizontal_loop_extent)
   type = real
@@ -149,7 +149,7 @@
   intent = in
 [pb2d]
   standard_name = atmosphere_boundary_layer_thickness
-  long_name = PBL thickness
+  long_name = PBL height
   units = m
   dimensions = (horizontal_loop_extent)
   type = real
