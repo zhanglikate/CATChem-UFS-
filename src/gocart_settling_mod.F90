@@ -161,7 +161,7 @@ SUBROUTINE settling_gocart_driver(dt,t_phy,moist,            &
           enddo
              call settling(1, 1, lmx, 5, grav,dyn_visc,&
                     sea_salt, tmp, p_mid, delz, airmas, &
-                    den_seas, reff_seas, dt, bstl_seas, rh, iseas, iseas,airden)
+                    den_seas, reff_seas, dt, bstl_seas, rh, idust, iseas,airden)
           kk=0
           do k=kts,kte
              kk=kk+1

@@ -444,6 +444,7 @@ contains
      enddo
     enddo
 
+# if 0
     if (.NOT. readrestart) then
       if (chem_in_opt == 0 ) then
         if(ktau.le.1)then
@@ -518,7 +519,8 @@ contains
 
       endif !(chem_in_opt == 1 )
      endif ! readrestart
-
+#endif
+!lzhang
      !-- assgin read in 3D background chemical species
      do i=its,ite
        do k=1,nvl_gocart
