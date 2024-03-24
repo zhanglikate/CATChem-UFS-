@@ -109,8 +109,8 @@ contains
     errmsg = ''
     errflg = 0
 
-    wetdep_ls_opt     = wetdep_ls_opt_in
 
+    if (wetdep_ls_opt_in > 0) then
     ! -- set domain
     ide=im 
     ime=im
@@ -143,7 +143,6 @@ contains
     enddo
 
 !!!
-
 !>- get ready for chemistry run
     call catchem_prep_wetdep(ktau,dtstep,                               &
         imp_physics, imp_physics_gfdl, imp_physics_thompson,            &
@@ -163,7 +162,7 @@ contains
     ! -- ls wet deposition
     var_rmv(:,:,:)=0.
 
-    select case (wetdep_ls_opt)
+    select case (wetdep_ls_opt_in)
       case (WDLS_OPT_GSD)
         do j=jts,jte
           do i=its,ite
@@ -251,7 +250,7 @@ contains
     call gocart_diag_store(3, var_rmv, trdf)
 
      wetdpl (:,:)=trdf(:,1,:,3)
-
+    end if ! wetdep_ls_opt_in 
 !
    end subroutine catchem_wetdep_wrapper_run
 !> @}
